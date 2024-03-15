@@ -3,14 +3,49 @@
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="generator" content={Astro.generator}/>
+    <title>The Beauty Hut | Face & Body Sculpting</title>
+</head>
+<body class="bg-black text-white">
+
+<main class="p-8 space-y-8">
+    <h1 class="text-5xl font-bold text-[#dfc998]">Make Your Dream a reality.</h1>
+    <div class="w-1/3">
+        <form class="bg-[#f3e5c6] p-4">
+            <div class="bg-white text-black p-4 flex flex-col justify-center items-center space-y-3">
+                <h2 class="text-[#ac7d45] text-2xl">INSERT OFFER HERE</h2>
+                <div class="w-full">
+                    <label for="first-name"/>
+                    <input id="first-name" name="first-name" class="bg-[#e6d8c7] p-2 w-full placeholder:text-black"
+                           placeholder="FIRST NAME" required/>
+                </div>
+                <div class="w-full">
+                    <label for="last-name"/>
+                    <input id="last-name" name="last-name" class="bg-[#e6d8c7] p-2 w-full placeholder:text-black"
+                           placeholder="LAST NAME" required/>
+                </div>
+                <div class="w-full">
+                    <label for="phone"/>
+                    <input id="phone" name="phone" class="bg-[#e6d8c7] p-2 w-full placeholder:text-black"
+                           placeholder="PHONE" required/>
+                </div>
+                <div class="w-full">
+                    <label for="email"/>
+                    <input type="email" id="email" name="email" class="bg-[#e6d8c7] p-2 w-full placeholder:text-black"
+                           placeholder="EMAIL" required/>
+                </div>
+                <div class="flex flex-row justify-between items-center w-full">
+                    <div>TODO: add reCAPTCHA</div>
+                    <input type="submit" class="bg-[#ac7d45] text-white font-semibold p-2 text-center hover:cursor-pointer" value="SUBMIT"/>
+                </div>
+                <p>By submitting this form you agree to be contacted via phone/text/email.</p>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
 </html>
