@@ -41,7 +41,7 @@
                     </div>
                     <div class="flex flex-row justify-between items-center w-full">
                         <div>TODO: add reCAPTCHA</div>
-                        <input type="submit"
+                        <input type="submit" id="submit"
                                class="bg-[#ac7d45] text-white font-semibold p-2 text-center hover:cursor-pointer"
                                value="SUBMIT"/>
                     </div>
@@ -57,3 +57,53 @@
 </main>
 </body>
 </html>
+
+<script is:inline>
+    /* SmtpJS.com - v3.0.0 */
+    var Email = {
+        send: function (a) {
+            return new Promise(function (n, e) {
+                a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send";
+                var t = JSON.stringify(a);
+                Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function (e) {
+                    n(e)
+                })
+            })
+        }, ajaxPost: function (e, n, t) {
+            var a = Email.createCORSRequest("POST", e);
+            a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onload = function () {
+                var e = a.responseText;
+                null != t && t(e)
+            }, a.send(n)
+        }, ajax: function (e, n) {
+            var t = Email.createCORSRequest("GET", e);
+            t.onload = function () {
+                var e = t.responseText;
+                null != n && n(e)
+            }, t.send()
+        }, createCORSRequest: function (e, n) {
+            var t = new XMLHttpRequest;
+            return "withCredentials" in t ? t.open(e, n, !0) : "undefined" != typeof XDomainRequest ? (t = new XDomainRequest).open(e, n) : t = null, t
+        }
+    };
+
+    async function sendEmail(event) {
+        event.preventDefault();
+
+        Email.send({
+            SecureToken: "c0bdc7f4-5f7e-49da-9eaf-b4fb6125ec5b",
+            To: 'hammadmajid@pm.me',
+            From: "hm.hammadmajid@gmail.com",
+            Subject: "The Beautify Hut Custom Offer",
+            Body: `
+Name: ${document.getElementById('first-name').value} ${document.getElementById('last-name').value}\n
+Email: ${document.getElementById('email').value}\n
+Phone: ${document.getElementById('phone').value}\n
+            `
+        }).then(
+            message => alert(message)
+        );
+    }
+
+    document.getElementById("submit").addEventListener('click', sendEmail);
+</script>
