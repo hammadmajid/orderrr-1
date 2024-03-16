@@ -23,7 +23,8 @@
                    placeholder="EMAIL" required/>
         </div>
         <div class="flex flex-row justify-between items-center w-full">
-            <div>TODO: add reCAPTCHA</div>
+            <!-- TODO: Uncomment below the below line and add reCAPTCHA client in data-sitekey attribute -->
+            <!--<div class="g-recaptcha" data-sitekey=""></div>-->
             <input type="submit" id="submit"
                    class="bg-[#ac7d45] text-white font-semibold p-2 text-center hover:cursor-pointer"
                    value="SUBMIT"/>
@@ -68,10 +69,11 @@
     async function sendEmail(event) {
         event.preventDefault();
 
+        // TODO: get the SecureToken from smtpjs.com with your Elasticemail credentials and fill in the TO and From field below
         Email.send({
-            SecureToken: "c0bdc7f4-5f7e-49da-9eaf-b4fb6125ec5b",
-            To: 'hammadmajid@pm.me',
-            From: "hm.hammadmajid@gmail.com",
+            SecureToken: "",
+            To: "",
+            From: "",
             Subject: "The Beautify Hut Custom Offer",
             Body: `
 Name: ${document.getElementById('first-name').value} ${document.getElementById('last-name').value}\n
