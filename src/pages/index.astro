@@ -107,10 +107,10 @@ import FAQ from "@components/FAQ.astro";
 
     <!-- About Section -->
     <div class="bg-[url('/images/skin.png')] h-[26rem] w-full object-cover flex flex-col lg:flex-row justify-center items-start lg:items-center gap-4 p-4 md:p-20 my-12">
-        <p class="text-3xl md:text-4xl font-bold lg:w-1/2">Feel confident and
+        <p class="text-3xl md:text-4xl font-bold lg:w-1/2 drop-shadow-2xl" id="shadowed-text">Feel confident and
             look younger without invasive surgery with CoolSculpting</p>
         <a href="tel:123456789"
-           class="px-6 py-4 bg-white text-black rounded-full block w-max hover:cursor-pointer">123-4560-789</a>
+           class="px-6 py-4 shadow-xl bg-white text-black rounded-full block w-max hover:cursor-pointer">123-4560-789</a>
     </div>
 </BaseLayout>
 
@@ -144,5 +144,9 @@ import FAQ from "@components/FAQ.astro";
     .no-scrollbar {
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
+    }
+
+    #shadowed-text {
+        text-shadow: #000 1px 1px 30px;
     }
 </style>
