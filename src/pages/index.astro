@@ -10,10 +10,10 @@ import FAQ from "@components/FAQ.astro";
             description="The Beauty Hut | Face & Body Sculpting | Make your dream a reality">
 
     <!-- Hero Section -->
-    <main class="p-8 space-y-8">
-        <h1 class="text-3xl md:text-5xl font-bold text-[#dfc998]">Make Your Dream a reality.</h1>
+    <main class="space-y-8">
+        <h1 class="p-8 text-3xl md:text-5xl font-bold text-[#dfc998]">Make Your Dream a reality.</h1>
         <div class="flex flex-col lg:flex-row justify-between items-center space-y-12">
-            <div class="lg:w-2/5">
+            <div class="lg:w-2/5 p-8">
                 <Form/>
             </div>
             <div class="grid grid-cols-10 lg:w-1/2 p-4 md:p-12 lg:p-0">
@@ -37,15 +37,16 @@ import FAQ from "@components/FAQ.astro";
                 consultation now and explore how CoolSculpting can not only transform your appearance but also elevate
                 your confidence.</p>
             <a href="tel:123456789"
-               class="px-4 py-2 bg-[#dfc998] text-black rounded-full block w-max hover:cursor-pointer">123 456 789</a>
+               class="px-6 py-4 bg-[#dfc998] text-black rounded-full block w-max hover:cursor-pointer">123 456 789</a>
         </div>
     </section>
 
     <!-- Image Stack -->
-    <div class="relative px-8 lg:px-20 my-12">
-        <img src="/images/skin.png" alt="Skin pattern of Cheetah" class="w-full h-[26rem] object-cover rounded-[2rem]"/>
-        <img src="/images/before-after.png" alt="Four images showing before and after CoolSculpting treatment"
-             class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[2rem]"/>
+    <div class="px-8 lg:px-20 my-8">
+        <div class="bg-[url('/images/skin.png')] h-full rounded-[2rem] grid place-content-center p-4 md:p-8">
+            <img src="/images/before-after.png" alt="Four images showing before and after CoolSculpting treatment"
+                 class="rounded-[2rem]"/>
+        </div>
     </div>
 
     <!-- Card Section -->
@@ -108,11 +109,12 @@ import FAQ from "@components/FAQ.astro";
     </section>
 
     <!-- About Section -->
-    <section class="text-center relative my-12">
-        <img src="/images/skin.png" alt="Skin pattern of Cheetah" class="w-full h-[26rem] object-cover"/>
-        <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl font-bold">Feel confident and
+    <div class="bg-[url('/images/skin.png')] h-[26rem] w-full object-cover flex flex-col lg:flex-row justify-center items-start lg:items-center gap-4 p-4 md:p-20 my-12">
+        <p class="text-3xl md:text-4xl font-bold lg:w-1/2">Feel confident and
             look younger without invasive surgery with CoolSculpting</p>
-    </section>
+        <a href="tel:123456789"
+           class="px-6 py-4 bg-white text-black rounded-full block w-max hover:cursor-pointer">123 456 789</a>
+    </div>
 </BaseLayout>
 
 <style>
