@@ -5,6 +5,8 @@ import Form from "@components/Form.astro";
 
 <BaseLayout title="The Beauty Hut | Face & Body Sculpting"
             description="The Beauty Hut | Face & Body Sculpting | Make your dream a reality">
+
+    <!-- Hero Section -->
     <main class="p-8 space-y-8">
         <h1 class="text-3xl md:text-5xl font-bold text-[#dfc998]">Make Your Dream a reality.</h1>
         <div class="flex flex-col lg:flex-row justify-between items-center space-y-12">
@@ -19,6 +21,21 @@ import Form from "@components/Form.astro";
             </div>
         </div>
     </main>
+
+    <!--  Secondary Section  -->
+    <section class="flex flex-col lg:flex-row justify-center items-center mt-12 p-4 md:p-8 gap-8">
+        <img src="/images/in-clinic-1.png" alt="A doctor trating a patient in clinic" class="rounded-[2rem]"/>
+
+        <div class="space-y-4">
+            <h2 class="text-3xl font-bold text-[#dfc998]">Discover the Power of CoolSculpting</h2>
+            <p>Unlock the your inner confidence and seize control of your physique through CollSculpting's secure and
+                efficient fat reduction treatment. Employing a precision colling technique, CoolSculpting freezes
+                eradicates persistent fat cells, yielding a more defined and sculpted aesthetic. Schedule your
+                consultation now and explore how CoolSculpting can not only transform your appearance but also elevate
+                your confidence.</p>
+            <a href="tel:123456789" class="px-4 py-2 bg-[#dfc998] text-black rounded-full block w-max hover:cursor-pointer">123 456 789</a>
+        </div>
+    </section>
 </BaseLayout>
 
 <style>
