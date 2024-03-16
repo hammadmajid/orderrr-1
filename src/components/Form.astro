@@ -28,7 +28,7 @@
                    class="bg-[#ac7d45] text-white font-semibold p-2 text-center hover:cursor-pointer"
                    value="SUBMIT"/>
         </div>
-        <p>By submitting this form you agree to be contacted via phone/text/email.</p>
+        <p class="text-sm">By submitting this form you agree to be contacted via phone/text/email.</p>
     </div>
 </form>
 
@@ -61,6 +61,10 @@
         }
     };
 
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     async function sendEmail(event) {
         event.preventDefault();
 
@@ -75,8 +79,11 @@ Email: ${document.getElementById('email').value}\n
 Phone: ${document.getElementById('phone').value}\n
             `
         }).then(
-            message => alert(message)
+            message => () => console.log(message)
         );
+
+        await sleep(2000);
+        window.location.href = "/form-success";
     }
 
     document.getElementById("submit").addEventListener('click', sendEmail);
