@@ -3,6 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Form from "@components/Form.astro";
 import Card from "@components/Card.astro";
 import Testimonial from "@components/Testimonial.astro";
+import FAQ from "@components/FAQ.astro";
 ---
 
 <BaseLayout title="The Beauty Hut | Face & Body Sculpting"
@@ -72,6 +73,30 @@ import Testimonial from "@components/Testimonial.astro";
             <Testimonial name="Dani Marino" jobTitle="Busnissman"
                          testimonial="Lorem ipsum doler sit amet, ino consetuaut adipisicaing elitoe. Malestie faubices."
                          imgSrc="/images/testimonial-img.png"></Testimonial>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="flex flex-col xl:flex-row justify-center items-center gap-20 px-8 lg:px-20 mt-20">
+        <img src="/images/FAQ.png" alt="Image showing fat on differnt parts of body"/>
+        <div class="space-y-4 w-full">
+            <h2 class="text-4xl font-bold text-[#dfc998] w-full">FAQ</h2>
+            <div class="space-y-1">
+                <FAQ question="What areas can be treated with CoolSculpting?"
+                     answer="Lorem ipsum doler sit amet, ino consetuaut adipisicaing elitoe."/>
+                <FAQ question="How many CoolSculpting treatments will I need?"
+                     answer="Lorem ipsum doler sit amet, ino consetuaut adipisicaing elitoe."/>
+                <FAQ question="When will I see the results CoolSculpting?"
+                     answer="Lorem ipsum doler sit amet, ino consetuaut adipisicaing elitoe."/>
+                <FAQ question="Are the results from CoolSculpting permanent?"
+                     answer="Lorem ipsum doler sit amet, ino consetuaut adipisicaing elitoe."/>
+                <FAQ question="Is CoolSculpting right for me?"
+                     answer="Lorem ipsum doler sit amet, ino consetuaut adipisicaing elitoe."/>
+                <FAQ question="Does CoolSculpting hurt?"
+                     answer="Lorem ipsum doler sit amet, ino consetuaut adipisicaing elitoe."/>
+                <FAQ question="What areas can be treated with CoolSculpting?"
+                     answer="Lorem ipsum doler sit amet, ino consetuaut adipisicaing elitoe."/>
+            </div>
         </div>
     </section>
 </BaseLayout>

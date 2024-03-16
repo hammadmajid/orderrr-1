@@ -1,0 +1,19 @@
+---
+export interface Props {
+    question: string,
+    answer: string,
+}
+
+const {question, answer} = Astro.props as Props;
+---
+
+<details>
+    <summary class="font-semibold text-lg">{question}</summary>
+    <span class="xl:ml-5">{answer}</span>
+</details>
+
+<style>
+    summary {
+        list-style-type: "+  ";
+    }
+</style>
