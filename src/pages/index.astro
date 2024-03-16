@@ -41,6 +41,13 @@ import FAQ from "@components/FAQ.astro";
         </div>
     </section>
 
+    <!-- Image Stack -->
+    <div class="relative px-8 lg:px-20 my-12">
+        <img src="/images/skin.png" alt="Skin pattern of Cheetah" class="w-full h-[26rem] object-cover rounded-[2rem]"/>
+        <img src="/images/before-after.png" alt="Four images showing before and after CoolSculpting treatment"
+             class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[2rem]"/>
+    </div>
+
     <!-- Card Section -->
     <section class="p-4 md:px-20 mt-12 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-8">
         <Card title="Non-invasive, non-surgical treamtment"
@@ -103,7 +110,8 @@ import FAQ from "@components/FAQ.astro";
     <!-- About Section -->
     <section class="text-center relative my-12">
         <img src="/images/skin.png" alt="Skin pattern of Cheetah" class="w-full h-[26rem] object-cover"/>
-        <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl font-bold">Feel confident and look younger without invasive surgery with CoolSculpting</p>
+        <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl font-bold">Feel confident and
+            look younger without invasive surgery with CoolSculpting</p>
     </section>
 </BaseLayout>
 
