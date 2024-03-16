@@ -11,7 +11,7 @@ import Form from "@components/Form.astro";
             <div class="lg:w-2/5">
                 <Form/>
             </div>
-            <div class="grid grid-cols-5 lg:w-1/2">
+            <div class="grid grid-cols-10 lg:w-1/2 p-12 lg:p-0">
                 <img src="/skin.png" alt="Skin pattern of cheetah" id="skin-1"
                      class=""/>
                 <img src="/women-1.png" alt="A happy and healthy women sitting on floor."
@@ -28,9 +28,10 @@ import Form from "@components/Form.astro";
     }
 
     #women-1 {
-        grid-column: 1 / 3;
-        align-self: center;
-
+        grid-column: 1 / 7;
+        align-self: end;
+        top: 2rem;
+        position: relative;
     }
 
     #skin-1 {
