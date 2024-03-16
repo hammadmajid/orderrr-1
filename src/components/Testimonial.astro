@@ -1,0 +1,29 @@
+---
+export interface Props {
+    name: string,
+    jobTitle: string,
+    testimonial: string,
+    imgSrc: string;
+}
+
+const {name, jobTitle, testimonial, imgSrc} = Astro.props as Props;
+---
+
+<div class="w-96 px-4 flex-shrink-0">
+    <div class="rounded-[2rem] p-4 flex flex-row justify-center items-center gap-4 bg-white text-black">
+        <img src={imgSrc} alt={"Image of " + name} class="h-16 w-16 rounded-full"/>
+        <div class="space-y-2">
+            <p>{testimonial}</p>
+            <p><span class="font-semibold">{name}</span> / {jobTitle}</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .flex-shrink-0 {
+        scroll-snap-align: start;
+    }
+
+
+
+</style>

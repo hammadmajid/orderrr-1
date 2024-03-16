@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Form from "@components/Form.astro";
 import Card from "@components/Card.astro";
+import Testimonial from "@components/Testimonial.astro";
 ---
 
 <BaseLayout title="The Beauty Hut | Face & Body Sculpting"
@@ -55,6 +56,25 @@ import Card from "@components/Card.astro";
         <Card title="Customize treatment plan to meet your needs" description="Boost self confidence and body positiviy"
               src="/images/treatment-3.png" alt="Doctor discussing plan with paitent"/>
     </section>
+
+    <!-- Testimonial Section -->
+    <section class="space-y-8 mt-12">
+        <h2 class="text-4xl font-bold text-[#dfc998] px-8 lg:px-20">What people say about us</h2>
+        <div class="flex overflow-x-auto no-scrollbar" id="testimonials">
+            <Testimonial name="Dani Marino" jobTitle="Busnissman"
+                         testimonial="Lorem ipsum doler sit amet, ino consetuaut adipisicaing elitoe. Malestie faubices."
+                         imgSrc="/images/testimonial-img.png"></Testimonial>
+            <Testimonial name="Dani Marino" jobTitle="Busnissman"
+                         testimonial="Lorem ipsum doler sit amet, ino consetuaut adipisicaing elitoe. Malestie faubices."
+                         imgSrc="/images/testimonial-img.png"></Testimonial>
+            <Testimonial name="Dani Marino" jobTitle="Busnissman"
+                         testimonial="Lorem ipsum doler sit amet, ino consetuaut adipisicaing elitoe. Malestie faubices."
+                         imgSrc="/images/testimonial-img.png"></Testimonial>
+            <Testimonial name="Dani Marino" jobTitle="Busnissman"
+                         testimonial="Lorem ipsum doler sit amet, ino consetuaut adipisicaing elitoe. Malestie faubices."
+                         imgSrc="/images/testimonial-img.png"></Testimonial>
+        </div>
+    </section>
 </BaseLayout>
 
 <style>
@@ -72,5 +92,20 @@ import Card from "@components/Card.astro";
 
     #skin-1 {
         grid-column: 2 / -1;
+    }
+
+    #testimonials {
+        scroll-snap-type: x mandatory;
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
     }
 </style>
