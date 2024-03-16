@@ -1,28 +1,22 @@
 ---
-import Form from "@components/Form.astro"
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Form from "@components/Form.astro";
 ---
 
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-    <meta name="viewport" content="width=device-width"/>
-    <meta name="generator" content={Astro.generator}/>
-    <title>The Beauty Hut | Face & Body Sculpting</title>
-</head>
-<body class="bg-black text-white overflow-x-hidden">
-<main class="p-8 space-y-8">
-    <h1 class="text-5xl font-bold text-[#dfc998]">Make Your Dream a reality.</h1>
-    <div class="flex flex-col lg:flex-row justify-between items-center space-y-4">
-        <div class="lg:w-2/5">
-          <Form/>
+<BaseLayout title="The Beauty Hut | Face & Body Sculpting"
+            description="The Beauty Hut | Face & Body Sculpting | Make your dream a reality">
+    <main class="p-8 space-y-8">
+        <h1 class="text-5xl font-bold text-[#dfc998]">Make Your Dream a reality.</h1>
+        <div class="flex flex-col lg:flex-row justify-between items-center space-y-4">
+            <div class="lg:w-2/5">
+                <Form/>
+            </div>
+            <div class="relative lg:w-1/2">
+                <img src="/skin.png" alt="Skin pattern of cheetah"
+                     class="relative object-cover left-[10%] rounded-[2rem]"/>
+                <img src="/women-1.png" alt="A happy and healthy women sitting on floor."
+                     class="absolute object-cover h-full top-8 right-[80%] lg:right-[55%] rounded-[2rem]"/>
+            </div>
         </div>
-        <div class="relative lg:w-1/2">
-            <img src="/skin.png" alt="Skin pattern of cheetah" class="relative object-cover left-[10%] rounded-[2rem]"/>
-            <img src="/women-1.png" alt="A happy and healthy women sitting on floor." class="absolute object-cover h-full top-8 right-[80%] lg:right-[55%] rounded-[2rem]"/>
-        </div>
-    </div>
-</main>
-</body>
-</html>
-
+    </main>
+</BaseLayout>
