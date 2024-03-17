@@ -28,7 +28,7 @@ import FAQ from "@components/FAQ.astro";
     <img src="/images/line.png" alt="Curvy line for decoration purpose" class="w-1/2 h-[12rem]"/>
 
     <!--  Secondary Section  -->
-    <section class="flex flex-col lg:flex-row justify-center items-center px-4 md:px-20 gap-8">
+    <section class="flex flex-col lg:flex-row justify-center items-center px-4 md:px-20 gap-8 transition-section">
         <img src="/images/in-clinic-1.png" alt="A doctor trating a patient in clinic" class="rounded-[2rem]"/>
 
         <div class="space-y-4">
@@ -44,7 +44,7 @@ import FAQ from "@components/FAQ.astro";
     </section>
 
     <!-- Image Stack -->
-    <div class="px-8 lg:px-20 my-12">
+    <div class="px-8 lg:px-20 my-12 transition-section">
         <div class="bg-[url('/images/skin.png')] h-full rounded-[2rem] grid place-content-center p-4 md:p-8">
             <img src="/images/before-after.png" alt="Four images showing before and after CoolSculpting treatment"
                  class="rounded-[2rem]"/>
@@ -52,7 +52,7 @@ import FAQ from "@components/FAQ.astro";
     </div>
 
     <!-- Card Section -->
-    <section class="p-4 md:px-20 mt-12 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-8">
+    <section class="p-4 md:px-20 mt-12 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-8 transition-section">
         <Card title="Non-invasive, non-surgical treamtment"
               description="No downtime needed - return to normal activies right away" src="/images/treatment-1.png"
               alt="Doctor performing sculpting on paitent's stmach"/>
@@ -68,7 +68,7 @@ import FAQ from "@components/FAQ.astro";
     </section>
 
     <!-- Testimonial Section -->
-    <section class="space-y-8 mt-12">
+    <section class="space-y-8 mt-12 transition-section">
         <h2 class="text-4xl font-bold text-[#dfc998] px-8 lg:px-20">What people say about us</h2>
         <div class="flex flex-col lg:flex-row justify-center items-center gap-4">
             <Testimonial name="Dani Marino" jobTitle="Busnissman"
@@ -86,7 +86,7 @@ import FAQ from "@components/FAQ.astro";
     <img src="/images/line.png" alt="Curvy line for decoration purpose" class="w-1/2 h-[12rem] self-end"/>
 
     <!-- FAQ Section -->
-    <section class="flex flex-col xl:flex-row justify-center items-center gap-20 px-8 lg:px-20 mt-20">
+    <section class="flex flex-col xl:flex-row justify-center items-center gap-20 px-8 lg:px-20 mt-20 transition-section">
         <img src="/images/FAQ.png" alt="Image showing fat on differnt parts of body"/>
         <div class="space-y-4 w-full">
             <h2 class="text-4xl font-bold text-[#dfc998] w-full">FAQ</h2>
@@ -119,6 +119,27 @@ import FAQ from "@components/FAQ.astro";
     </div>
 </BaseLayout>
 
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const sections = document.getElementsByClassName('transition-section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'transition-opacity', 'duration-1000');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        // Convert HTMLCollection to an array to use forEach
+        Array.from(sections).forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+
 <style>
     #skin-1, #women-1 {
         grid-row: 1 / 2;
@@ -139,4 +160,22 @@ import FAQ from "@components/FAQ.astro";
     #shadowed-text {
         text-shadow: #000 1px 1px 30px;
     }
+
+    .transition-section {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .opacity-100 {
+        opacity: 1;
+    }
+
+    .transition-opacity {
+        transition: opacity 1s ease-in-out;
+    }
+
+    .duration-1000 {
+        transition-duration: 1000ms;
+    }
+
 </style>
